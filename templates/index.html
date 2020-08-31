@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Outbound diaries</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--FONT FAMILY-->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+ 
+  <!--BOOTSTRAP-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<!--CSS File-->
+{% load static %}
+<link rel="stylesheet" href="{% static 'ir.css' %}">
+
+
+
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <div class="top-menu"></div>
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">International Relations Cell</a>
+          
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      IITKGP Students
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Programs</a>
+                      <a class="dropdown-item" href="#">Funding</a>
+                      <a class="dropdown-item" href="#">FTP</a>
+                    </div>
+                  </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  International Students
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Acadmeic Programs</a>
+                  <a class="dropdown-item" href="#">How to Apply</a>
+                  <a class="dropdown-item" href="#">Fee structure</a>
+                </div>
+              </li>
+          
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  International Faculty
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Opportunity</a>
+                  <a class="dropdown-item" href="#">Funding</a>
+                  <a class="dropdown-item" href="#">Visa</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+          </nav>
+
+        
+          <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">2019</a>
+            <a href="#">2018</a>
+            <a href="#">2017</a>
+            <a href="#">2016</a>
+          </div>
+          
+          
+
+        <div class="container page" id="pages">
+    
+                    
+            <div id="main">
+                <button class="openbtn" onclick="openNav()">&#9776; Years</button> 
+               
+              </div>
+              <h1 class="exchange">Exchange Diaries</h1>
+              <hr>
+              <h1 class="outbound">Outbound Diaries<span style="font-size:30px;color:rgb(122, 122, 122)">  2019</span></h1>
+            <div class="row">
+                {% for student in students_data %}
+                <div class="col-lg-4 col-md-6 student" >
+                    <div class="content">
+                <figure class="cards">
+                    <img src="../{{ student.image }}" class="image"> 
+                    <div class="name"> 
+                    <h2>{{ student.student_name }}</h2>
+                    <hr class="line">
+                <h5>{{ student.branch }}</h5> 
+            </div>
+                </figure>
+                <div class="info">
+                <h3 class="college">{{ student.university }}</h3>
+                    <p><b>Research Area: </b>{{ student.research_area }}</p>
+                    
+                    
+                        <p><b>Duration: </b>{{ student.duration }}</p>
+                    <a href="#" style="color: #4b65c1">Read more</a>
+                </div>
+                </div>
+                </div>
+                {% endfor %}
+
+
+<!--
+
+
+
+
+                <div class="col-lg-4 col-md-6 student" >
+                    <div class="content">
+                <figure class="cards">
+                    <img src="{% static "img/0_1.jpg" %}" class="image"> 
+                    <div class="name"> 
+                        <h2>Kunal Kumar</h2>
+                        <hr class="line">
+                    <h5>Mechnical Engineering</h5> 
+                </div>
+                </figure>
+                <div class="info">
+                <h3 class="college"><i>Laval University</i>, Canada</h3>
+                    <p><b>Research Area: </b>Big Data Analytics</p>
+                    
+                    
+                        <p><b>Duration: </b>2 Months</p>
+                    <a href="#" style="color: #4b65c1">Read more</a>
+                </div>
+                </div>
+                </div>
+                <div class="col-lg-4 col-md-6 student" >
+                    <div class="content">
+                <figure class="cards">
+                    <img src="{% static "img/0_1.jpg" %}" class="image"> 
+                    <div class="name"> 
+                        <h2>Ankush Roy</h2>
+                        <hr class="line">
+                    <h5>Mechnical Engineering</h5> 
+                </div>
+                </figure>
+                <div class="info">
+                <h3 class="college"><i>National University of Singapor</i>, Singapor</h3>
+                    <p><b>Research Area: </b>Big Data Analytics</p>
+                    
+                    
+                        <p><b>Duration: </b>2 Months</p>
+                    <a href="#" style="color: #4b65c1">Read more</a>
+                </div>
+                </div>
+                </div>
+ 
+
+    
+    
+        <div class="col-lg-4 col-md-6 student" >
+            <div class="content">
+        <figure class="cards">
+            <img src="{% static "img/0_1.jpg" %}" class="image"> 
+            <div class="name"> 
+            <h2>Abhishek Nitin</h2>
+            <hr class="line">
+        <h5>Architecure and Regional Planning</h5> 
+    </div>
+        </figure>
+        <div class="info">
+        <h3 class="college"><i>University of Hong Kong</i>, China</h3>
+            <p><b>Research Area: </b>Big Data Analytics</p>
+            
+            
+                <p><b>Duration: </b>2 Months</p>
+            <a href="#" style="color: #4b65c1">Read more</a>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-6 student" >
+            <div class="content">
+        <figure class="cards">
+            <img src="{% static "img/0_1.jpg" %}" class="image"> 
+            <div class="name"> 
+                <h2>Prachi Agarwal</h2>
+                <hr class="line">
+            <h5>Civil Engineering</h5> 
+        </div>
+        </figure>
+        <div class="info">
+        <h3 class="college"><i>Laval University</i>, Canada</h3>
+            <p><b>Research Area: </b>Big Data Analytics</p>
+            
+            
+                <p><b>Duration: </b>2 Months</p>
+            <a href="#" style="color: #4b65c1">Read more</a>
+        </div>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-6 student" >
+            <div class="content">
+        <figure class="cards">
+            <img src="{% static "img/0_1.jpg" %}" class="image"> 
+            <div class="name"> 
+                <h2>Kumar Saurav</h2>
+                <hr class="line">
+            <h5>Architecure and Regional Planning</h5> 
+        </div>
+        </figure>
+        <div class="info">
+        <h3 class="college"><i>University of British Columbia</i>, Canada</h3>
+            <p><b>Research Area: </b>Big Data Analytics</p>
+            
+            
+                <p><b>Duration: </b>2 Months</p>
+            <a href="#" style="color: #4b65c1">Read more</a>
+        </div>
+        </div>
+        </div>
+    -->
+</div>
+           
+
+</div>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static "ir.js" %}"></script>
+    </body>
+</html>
